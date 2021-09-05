@@ -48,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   const articlesDir = path.join(process.cwd(), "_posts/articles");
   const paths = fs
     .readdirSync(articlesDir)
-    .map((Info) => ({ params: { articles: Info.replace(/.md?$/, "") } }));
+    .map((Info) => ({ params: { article: Info.replace(/.md?$/, "") } }));
 
   return {
     paths,
