@@ -19,3 +19,4 @@ collections:
       - { label: "Ingress", name: "ingress", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Article Image", name: "thumbnail", widget: "image" }
+      
