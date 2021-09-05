@@ -22,7 +22,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ content, frontMatter }) => 
         <main>
             <ReactMarkdown
               remarkPlugins={[
-                [remarkToc, { heading: "Innhold", maxDepth: 3, tight: true }],
+                [remarkToc, { heading: "TOC", maxDepth: 3, tight: true }],
                 remarkSlug,
               ]}
             >
@@ -35,7 +35,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ content, frontMatter }) => 
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const articlesDir = path.join(process.cwd(), "_posts/articles");
-  const fullPath = path.join(articlesDir, `${context.params!.articles}.md`);
+  const fullPath = path.join(articlesDir, `${context.params!.article}.md`);
   const file = fs.readFileSync(fullPath);
   const { content, data } = matter(file);
 
