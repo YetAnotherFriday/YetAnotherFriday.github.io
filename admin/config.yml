@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo:  YetAnotherFriday/YetAnotherFriday.github.io 
+  branch: main
+  base_url: https://yafnode.herokuapp.com/
+  site_url: https://yetanotherfriday.github.io
+
+media_folder: public/img
+public_folder: img
+collections:
+  - label: "Article"
+    name: "article"
+    folder: "_posts/articles"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true
+    fields:
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Ingress", name: "ingress", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Article Image", name: "thumbnail", widget: "image" }
